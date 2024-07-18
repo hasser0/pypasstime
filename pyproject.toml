@@ -2,19 +2,20 @@
 requires = ["setuptools", "setuptools-scm"]
 build-backend = "setuptools.build_meta"
 
-[tool.setuptools.dynamic]
-version = {attr = "pypasstime.__version__"}
-
 [project]
 name = "pypasstime"
 description = "Time lapse encryption program aimed to fight back social media addiction"
 requires-python = ">=3.10.12"
 readme = "README.md"
-dynamic = ["version"]
+dynamic = ["version", "dependencies"]
 
 [project.scripts]
 create-puzzle = "pypasstime:create_puzzle"
 solve-puzzle = "pypasstime:solve_puzzle"
+
+[tool.setuptools.dynamic]
+version = {attr = "pypasstime.__version__"}
+dependencies = {file = ["requirements.txt"]}
 
 [tool.isort]
 py_version = 310
