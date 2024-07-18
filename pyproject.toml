@@ -10,6 +10,11 @@ name = "pypasstime"
 description = "Time lapse encryption program aimed to fight back social media addiction"
 requires-python = ">=3.10.12"
 readme = "README.md"
+dynamic = ["version"]
+
+[project.scripts]
+create-puzzle = "pypasstime:create_puzzle"
+solve-puzzle = "pypasstime:solve_puzzle"
 
 [tool.isort]
 py_version = 310
@@ -87,5 +92,3 @@ max-args = 5
 max-branches = 12
 max-locals = 15
 max-statements = 50
-
-[tool.ruff.lint.pep8-naming]
