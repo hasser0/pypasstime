@@ -7,14 +7,14 @@ name = "pypasstime"
 description = "Time lapse encryption program aimed to fight back social media addiction"
 requires-python = ">=3.10.12"
 readme = "README.md"
-dynamic = ["version", "dependencies"]
+version = "0.0.1"
+dynamic = ["dependencies"]
 
 [project.scripts]
 create-puzzle = "pypasstime:create_puzzle"
 solve-puzzle = "pypasstime:solve_puzzle"
 
 [tool.setuptools.dynamic]
-version = {attr = "pypasstime.__version__"}
 dependencies = {file = ["requirements.txt"]}
 
 [tool.isort]

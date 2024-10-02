@@ -50,10 +50,9 @@ def solve_puzzle(filename):
 
 
 @click.command()
-@click.option("-f", "--filename", type=click.File("r"))
 @click.option("-t", "--text", type=str)
 @click.option("-s", "seconds", type=int)
-def create_puzzle(filename, text, seconds):
+def create_puzzle(text, seconds):
     puzzle = generate_time_lock_puzzle(text, seconds)
     with open("puzzle.pkl", "wb") as pkl:
         pickle.dump(puzzle, pkl)
